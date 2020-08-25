@@ -196,8 +196,8 @@ prompt_pure_precmd() {
 	setopt localoptions noshwordsplit
 
 	# Check execution time and store it in a variable.
-	prompt_pure_check_cmd_exec_time
-	unset prompt_pure_cmd_timestamp
+	# prompt_pure_check_cmd_exec_time
+	# unset prompt_pure_cmd_timestamp
 
 	# Shows the full path in the title.
 	prompt_pure_set_title 'expand-prompt' '%~'
@@ -559,11 +559,11 @@ prompt_pure_async_callback() {
 			case $code in
 				0)
 					local REPLY
-					prompt_pure_check_git_arrows ${(ps:\t:)output}
-					if [[ $prompt_pure_git_arrows != $REPLY ]]; then
-						typeset -g prompt_pure_git_arrows=$REPLY
-						do_render=1
-					fi
+					# prompt_pure_check_git_arrows ${(ps:\t:)output}
+					# if [[ $prompt_pure_git_arrows != $REPLY ]]; then
+					# 	typeset -g prompt_pure_git_arrows=$REPLY
+					# 	do_render=1
+					# fi
 					;;
 				97)
 					# No remote available, make sure to clear git arrows if set.
